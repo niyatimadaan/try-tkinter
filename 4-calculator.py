@@ -63,7 +63,7 @@ for i in range(1, 10):
     button.grid(row=(4- int((i-1)/3)), column=(i-1)%3)
 
 button0 = Button(root, text="0", padx=80, pady=20, command=lambda: button_click(0))
-button0.grid(row=5, column=0, columnspan=2)
+button0.grid(row=5, column=0, columnspan=2, sticky=W+E)
 button_dot = Button(root, text=".", padx=40, pady=20, command=lambda: button_click("."))
 button_dot.grid(row=5, column=2)
 
