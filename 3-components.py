@@ -17,5 +17,31 @@ button2 = Button(root, text="Enter Text", padx=50, pady=10,
 
 button2.pack()
 
+MODES = [
+    ("Pepperoni", "Pepperoni"),
+    ("Cheese", "Cheese"),
+    ("Mushroom", "Mushroom"),
+    ("Onion", "Onion")
+]
+
+pizza = StringVar()
+pizza.set("Pepperoni")
+
+for text, mode in MODES:
+    Radiobutton(root, text=text, variable=pizza, value=mode).pack(anchor=W)
+
+def clicked(value):
+    radioLabel = Label(root, text=value)
+    radioLabel.pack()
+
+# r = IntVar()
+# r.set(1)
+# Radiobutton(root, text="Option 1",variable=r, value=1, command=lambda: clicked(r.get())).pack()
+# Radiobutton(root, text="Option 2",variable=r, value=2, command=lambda: clicked(r.get())).pack()
+# radioLabel = Label(root, text=r.get()).pack()
+
+radioButton1 = Button(root, text="Click Me!", command=lambda: clicked(pizza.get())).pack()
+
+
 root.mainloop()
 
